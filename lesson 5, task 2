@@ -1,0 +1,16 @@
+# 1. Запрос городов
+cities_input = input("Введите названия 5 городов через запятую на английском: ")
+# 2. Список городов
+cities = cities_input.split(",")
+# Убрать пробелы
+for i in range(len(cities)):
+    cities[i] = cities[i].strip()
+# 3. Анализ списка городов
+for i in range(len(cities)):
+    city = cities[i]
+    #Вывод названия с нумерацией
+    output = f"City № {i + 1}: {city}"
+    # Проверка наличия буквы 'a'
+    if 'a' in city.lower():
+        output += " (в этом городе есть буква 'a')"
+    print(output)
