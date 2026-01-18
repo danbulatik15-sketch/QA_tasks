@@ -1,0 +1,13 @@
+# Список чисел
+numbers = list(range(1, 6))
+
+# Возведение в куб
+result = list(
+    map(
+        lambda x: x ** 3,
+        filter(lambda x: x % 2 != 0, numbers)
+    )
+)
+
+# Вывод результата
+print(result)
