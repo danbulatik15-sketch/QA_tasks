@@ -1,0 +1,20 @@
+def get_as_float(data_dict, key):
+    try:
+        value = data_dict[key]
+        number = float(value)
+        print(f"Успех: Получено число {number}")
+    except KeyError:
+        print(f"Ошибка: Ключ '{key}' не найден!")
+    except ValueError:
+        print(f"Ошибка: Значение по ключу '{key}' нельзя превратить в число!")
+
+# Создание словаря
+data = {
+    "price": "10.5",
+    "id": "abc"
+}
+
+# Примеры вызовов
+get_as_float(data, "price")
+get_as_float(data, "id")
+get_as_float(data, "amount")
