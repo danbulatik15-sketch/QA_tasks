@@ -1,0 +1,14 @@
+# Кортеж
+numbers_data = (15, 22, 10, 30, 5, 25, 18)
+# 1. Сумма
+total_sum = sum(numbers_data)
+# 2. Среднее арифметическое
+average = total_sum / len(numbers_data)
+# 3. Максимальное и минимальное значения
+max_value = max(numbers_data)
+min_value = min(numbers_data)
+# 4. Вывод результатов
+print("Сумма: ", total_sum)
+print("Среднее арифметическое: ", average)
+print("Максимальное значение: ", max_value)
+print("Минимальное значение: ", min_value)
