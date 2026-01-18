@@ -1,0 +1,52 @@
+class Rectangle:
+    def __init__(self, width, height):
+        self.width = width
+        self.height = height
+
+    @property
+    def width(self):
+        return self.__width
+
+    @width.setter
+    def width(self, value):
+        if value <= 0:
+            raise ValueError("Ширина должна быть больше 0!")
+        self.__width = value
+
+    @property
+    def height(self):
+        return self.__height
+
+    @height.setter
+    def height(self, value):
+        if value <= 0:
+            raise ValueError("Высота должна быть больше 0!")
+        self.__height = value
+
+    def area(self):
+        return self.__width * self.__height
+
+    def __str__(self):
+        return f"Прямоугольник [{self.__width} x {self.__height}]"
+
+    def __add__(self, other):
+        if not isinstance(other, Rectangle):
+            return NotImplemented
+        return self.area() + other.area()
+
+
+try:
+    w1 = float(input("Введите ширину первого прямоугольника: "))
+    h1 = float(input("Введите высоту первого прямоугольника: "))
+    r1 = Rectangle(w1, h1)
+
+    w2 = float(input("Введите ширину второго прямоугольника: "))
+    h2 = float(input("Введите высоту второго прямоугольника: "))
+    r2 = Rectangle(w2, h2)
+
+    print(r1)
+    print(r2)
+    print("Сумма площадей:", r1 + r2)
+
+except ValueError as e:
+    print("Ошибка:", e)
