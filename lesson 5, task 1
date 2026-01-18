@@ -1,0 +1,32 @@
+# 1. Создание пустого словаря
+contacts = {}
+# 2. Добавление контактов
+contacts["Анна Иванова"] = {
+    "name": "Анна Иванова",
+    "phone": "+79001234567",
+    "email": "anna.ivanova@example.com"
+}
+contacts["Петр Сидоров"] = {
+    "name": "Петр Сидоров",
+    "phone": "+79119876543",
+    "email": "petr.sidorov@example.com"
+}
+# 3. Информация о контакте Анна Иванова
+print("Информация о контакте Анна Иванова:")
+for key, value in contacts["Анна Иванова"].items():
+    print(f"{key}: {value}")
+#Отступы
+print ()
+print ()
+# 4. Смена номера Петра Сидорова
+contacts["Петр Сидоров"]["phone"] = "+79225551122"
+# 5. Добавление адреса Анны Ивановой
+contacts["Анна Иванова"]["address"] = "г. Москва, ул. Пушкина, д. 10"
+# 6. Удаление email Петра Сидорова
+del contacts["Петр Сидоров"]["email"]
+# 7. Печатание словаря
+print("Словарь contacts:")
+for contact_name, contact_info in contacts.items():
+    print(f"\n{contact_name}:")
+    for key, value in contact_info.items():
+        print(f"  {key}: {value}")
