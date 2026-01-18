@@ -1,0 +1,21 @@
+# 1. Исходный список
+inventory = ['hockey', 'football', 'basketball', 'tennis', 'volleyball', 'athletic']
+
+# 2. Пустой список
+processed_items = []
+
+# 3, 4. Обработка элементов
+for index, item in enumerate(inventory, start=1):
+    if index % 2 == 0 and len(item) > 5:
+        processed_items.append(f"{index}. Удлиненный {item}")
+    elif index % 2 != 0 and item[0].lower() in ('a', 'e', 'i', 'o', 'u'):
+        processed_items.append(f"{index}. Стартует с гласной: {item}")
+    else:
+        processed_items.append(f"{index}. {item}")
+
+# 5. Вывод результатов
+print("Исходный список: ", inventory)
+print ()
+print("Итоговый список: ")
+for item in processed_items:
+    print(item)
